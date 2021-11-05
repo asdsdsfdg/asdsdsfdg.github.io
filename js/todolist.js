@@ -6,20 +6,27 @@ const TODOS_KEY = "todo";
 
 let toDoArray = [];
 
+function saveToDo() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDoArray));
+}
+
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
+  //   const Data = JSON.parse(localStorage.getItem(TODOS_KEY));
+  toDoArray = toDoArray.filter((item) => item.id !== parseInt(li.id));
+  saveToDo();
 }
 
 function onToDoSubmit(event) {
   event.preventDefault();
-  const todoValue = toDoInput.value;
   const forToDoObject = {
     id: Date.now(),
-    value: todoValue,
+    value: toDoInput.value,
   };
   toDoArray.push(forToDoObject);
   toDoInput.value = "";
+  saveToDo(toDoArray);
   makeToDoList(forToDoObject);
 }
 
@@ -28,8 +35,6 @@ function makeToDoList(todo) {
   li.id = todo.id;
   const span = document.createElement("span");
   span.innerText = todo.value;
-  //   const button = document.createElement("button");
-  //   button.innerText = "❌";
   const button = document.createElement("input");
   button.type = `submit`;
   button.value = "❌";
@@ -40,3 +45,11 @@ function makeToDoList(todo) {
 }
 
 toDoForm.addEventListener("submit", onToDoSubmit);
+
+const toDoData = localStorage.getItem(TODOS_KEY);
+
+if (toDoData != null) {
+  const parseToDo = JSON.parse(toDoData);
+  parseToDo.forEach(makeToDoList); //forEach를 이용하여 배열의 각각의 원소를 자동으로 인수로서 makeToDoList로 전송 및 반복 실행한다
+  toDoArray = parseToDo;
+}
