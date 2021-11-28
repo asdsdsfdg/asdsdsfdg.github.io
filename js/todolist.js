@@ -33,15 +33,24 @@ function onToDoSubmit(event) {
 function makeToDoList(todo) {
   const li = document.createElement("li");
   li.id = todo.id;
-  const span = document.createElement("span");
-  span.innerText = todo.value;
+
   const button = document.createElement("input");
   button.type = `submit`;
   button.value = "❌";
+  button.style.backgroundColor = `transparent`;
+  button.style.border = `none`;
+  const span = document.createElement("span");
+  span.innerText = todo.value;
   button.addEventListener("click", deleteToDo);
+  span.addEventListener("click", selectToDo);
   li.appendChild(span);
   li.appendChild(button);
   toDoList.appendChild(li);
+}
+
+function selectToDo(event) {
+  const span = event.target;
+  span.classList.toggle("select");
 }
 
 toDoForm.addEventListener("submit", onToDoSubmit);

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1 id="clock">00:00:00</h1>
+    <h1 id="clock">00:00</h1>
     <form class="login-form">
       <input
         required
@@ -23,15 +23,38 @@
       <input type="text" placeholder="To Do List" />
     </form>
     <ul class="to-do-list"></ul>
+    <div id="shortcut-icon">
+      <a href="https://www.netflix.com/kr/" target="_blank"
+        ><img src="img/net.png"
+      /></a>
+      <a href="https://watcha.com/" target="_blank"
+        ><img src="img/wat.png"
+      /></a>
+      <a href="https://www.naver.com/" target="_blank"
+        ><img src="img/naver.png"
+      /></a>
+      <a
+        href="https://sports.news.naver.com/kbaseball/schedule/index"
+        target="_blank"
+        ><img src="img/baseball.png"
+      /></a>
+    </div>
     <div class="quote">
       <span></span>
       <div><span></span></div>
     </div>
-    <h2 class="weather"></h2>
+
+    <footer>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
     <script src="js/clock.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/backgrounds.js"></script>
     <script src="js/todolist.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
