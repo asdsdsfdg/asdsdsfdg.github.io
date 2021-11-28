@@ -1,1 +1,1 @@
-Make todolist to practice Vanilla Javascript
+Make chrome app to practice Vanilla Javascript
