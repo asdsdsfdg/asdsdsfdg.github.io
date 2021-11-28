@@ -27,7 +27,7 @@ body {
 
 #greetings {
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   color: white;
 }
 
@@ -43,7 +43,7 @@ body {
   background-color: whitesmoke;
   /* border: 1px solid; */
   border-radius: 10px;
-  color: white;
+  color: black;
   width: 200px;
   height: 30px;
   font-size: 20px;
