@@ -36,7 +36,23 @@ body {
   font-size: 30px;
   color: white;
 }
+.login-form {
+  margin-bottom: 10px;
+}
+.login-form input {
+  background-color: whitesmoke;
+  /* border: 1px solid; */
+  border-radius: 10px;
+  color: white;
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+}
 
+.login-form input::placeholder {
+  color: rgba(82, 70, 70, 0.418);
+  font-size: 20px;
+}
 .to-do-form input {
   background-color: transparent;
   border: none;
